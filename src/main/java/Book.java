@@ -57,4 +57,11 @@ public class Book {
                 ", isAvailable=" + isAvailable +
                 '}';
     }
+
+    // NEW: Check whether the borrowed book is overdue
+    public boolean isOverdue() {
+        return !isAvailable
+                && dueDate != null
+                && dueDate.before(new Date());
+    }
 }
